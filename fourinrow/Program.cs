@@ -147,9 +147,9 @@ namespace fourinrow
                                 positions[l- cont2, jogada] = player2.piece;
                                 break;
                             }                           
-                        }
-                        
-                    }
+                        }                        
+                    }                                    
+
                     if (mudar == "X")
                     {
                         mudar = "0";
@@ -157,7 +157,7 @@ namespace fourinrow
                     else
                     {
                         mudar = "X";
-                    }
+                    }              
 
                     Console.Clear();
                     Console.WriteLine("\n");
@@ -199,9 +199,76 @@ namespace fourinrow
                         Console.WriteLine();
                     }
                     Console.WriteLine("----------------------------------");                
-               }   
-            }                    
-                tentativas++;                
+               }
+                tentativas++;
+            }                        
+
         }
+
+        public static void CheckWin(string mudar, Char [,] positions)
+        {          
+
+            //// Condição de vitória nas Diagonais.
+            //if (positions[0, 0] == positions[1, 1] && positions[1, 1] == positions[2, 2] ||
+            //        positions[0, 2] == positions[1, 1] && positions[1, 1] == positions[2, 0])
+            //{
+            
+            //    Console.WriteLine("\n--------------");
+            //    Console.WriteLine("Fim de Jogo!!!");
+            //    Console.WriteLine("--------------");
+            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
+            //}
+
+            //// Condição de vitória nas Linhas.
+            //if (positions[0, 0] == positions[0, 1] && positions[0, 1] == positions[0, 2] ||
+            //    positions[1, 0] == positions[1, 1] && positions[1, 1] == positions[1, 2] ||
+            //    positions[2, 0] == positions[2, 1] && positions[2, 1] == positions[2, 2])
+            //{
+
+            //    Console.WriteLine("\n--------------");
+            //    Console.WriteLine("Fim de Jogo!!!");
+            //    Console.WriteLine("--------------");
+            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
+
+            //}
+
+            //// Condição de vitória nas Colunas.
+            //if (positions[0, 0] == positions[1, 0] && positions[1, 0] == positions[2, 0] ||
+            //    positions[0, 1] == positions[1, 1] && positions[1, 1] == positions[2, 1] ||
+            //    positions[0, 2] == positions[1, 2] && positions[1, 2] == positions[2, 2])
+            //{
+                
+            //    Console.WriteLine("\n--------------");
+            //    Console.WriteLine("Fim de Jogo!!!");
+            //    Console.WriteLine("--------------");
+            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
+
+            //}
+
+
+            for (int L=0; L<positions.Length; L++)
+            {
+                for (int C=0; C<positions.Length; C++)
+                {
+                    if ( positions[L,C] == positions[L, C+1] && positions[L, C+2] == positions[L, C + 3])
+                    {
+                        Console.WriteLine("\n--------------");
+                        Console.WriteLine("Fim de Jogo!!!");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
+
+                    }else if (positions[L, C] == positions[L+1, C] && positions[L+2, C] == positions[L+3, C])
+                    {
+                        Console.WriteLine("\n--------------");
+                        Console.WriteLine("Fim de Jogo!!!");
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
+                    }
+                }
+            }
+
+
+        }
+
     }
 }
