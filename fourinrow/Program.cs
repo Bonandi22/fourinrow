@@ -12,8 +12,8 @@ namespace fourinrow
             char [,] positions;
             String mudar= "X";
             int jogada;
-            int cont1=0;
-            int cont2=0;
+            int Length = 7;
+          
 
 
             Console.WriteLine("-------------------");
@@ -100,27 +100,24 @@ namespace fourinrow
                     {
                         if (mudar == "X")
                         {
-                           Console.WriteLine($"{player1.name} é sua vez de jogar, escolha uma das opçoes disponivel no tabuleiro");
-                           jogada = Convert.ToInt32(Console.ReadLine());
-                            
-                        if (jogada > 7)
-                        {
+                            Console.WriteLine($"{player1.name} é sua vez de jogar, escolha uma das opçoes disponivel no tabuleiro");
+                            jogada = Convert.ToInt32(Console.ReadLine());
+
+                            if (jogada > 7)
+                            {
                                 Console.WriteLine($"{player1.name} jogada invalida, favor selecionar uma coluna valida");
                                 jogada = Convert.ToInt32(Console.ReadLine());
-                        }
-                            
-                        if (positions[l, jogada] == ' ')
-                        {
-                            positions[l, jogada] = player1.piece;
-                            break;
-                        }
-                        else
-                        {
-                            cont1++;
-                            positions[l - cont1, jogada] = player1.piece;
-                            break;
-                        }                                                                             
-                                                      
+                            }
+
+                            if (positions[Length, jogada] != 'X' && positions[Length, jogada] != 'Y')
+                            {
+                                positions[Length, jogada] = player1.piece;
+                                break;
+
+                            } else
+                            {
+                                --Length;
+                            }
                         }
                         else
                         {
@@ -136,17 +133,16 @@ namespace fourinrow
                                 jogada = Convert.ToInt32(Console.ReadLine());
                             }
 
-                            if (positions[l, jogada] == ' ')
+                            if (positions[Length, jogada] != 'X' && positions[Length, jogada] != 'Y')
                             {
-                                   positions[l, jogada] = player2.piece;
-                                   break;
+                                positions[Length, jogada] = player2.piece;
+                                break;
                             }
                             else
                             {
-                                 cont2++;
-                                positions[l- cont2, jogada] = player2.piece;
-                                break;
-                            }                           
+                                --Length;                               
+                            }
+
                         }                        
                     }                                    
 
