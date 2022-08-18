@@ -202,45 +202,7 @@ namespace fourinrow
         }
 
         public static void CheckWin(string mudar, Char [,] positions)
-        {          
-
-            //// Condição de vitória nas Diagonais.
-            //if (positions[0, 0] == positions[1, 1] && positions[1, 1] == positions[2, 2] ||
-            //        positions[0, 2] == positions[1, 1] && positions[1, 1] == positions[2, 0])
-            //{
-            
-            //    Console.WriteLine("\n--------------");
-            //    Console.WriteLine("Fim de Jogo!!!");
-            //    Console.WriteLine("--------------");
-            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
-            //}
-
-            //// Condição de vitória nas Linhas.
-            //if (positions[0, 0] == positions[0, 1] && positions[0, 1] == positions[0, 2] ||
-            //    positions[1, 0] == positions[1, 1] && positions[1, 1] == positions[1, 2] ||
-            //    positions[2, 0] == positions[2, 1] && positions[2, 1] == positions[2, 2])
-            //{
-
-            //    Console.WriteLine("\n--------------");
-            //    Console.WriteLine("Fim de Jogo!!!");
-            //    Console.WriteLine("--------------");
-            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
-
-            //}
-
-            //// Condição de vitória nas Colunas.
-            //if (positions[0, 0] == positions[1, 0] && positions[1, 0] == positions[2, 0] ||
-            //    positions[0, 1] == positions[1, 1] && positions[1, 1] == positions[2, 1] ||
-            //    positions[0, 2] == positions[1, 2] && positions[1, 2] == positions[2, 2])
-            //{
-                
-            //    Console.WriteLine("\n--------------");
-            //    Console.WriteLine("Fim de Jogo!!!");
-            //    Console.WriteLine("--------------");
-            //    Console.WriteLine($"\nParabéns!!! O ganhador é [{mudar}].");
-
-            //}
-
+        { 
 
             for (int L=0; L<positions.Length; L++)
             {
